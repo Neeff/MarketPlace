@@ -1,0 +1,36 @@
+<div class="w-2/3 mx-auto">
+  <div class "bg-white shadow-md rounded my-6">
+    <br />
+     <%= paginate @orders%>
+
+     <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
+      <thead>
+        <tr>
+          <th class="py-4 px-6 bg-grey-300 font-bold uppercase text-sm text-grey-900 border-b border-grey-300">Stripe Charge Id</th>
+          <th class="py-4 px-6 bg-grey-300 font-bold uppercase text-sm text-grey-900 border-b border-grey-300">Product</th>
+          <th class="py-4 px-6 bg-grey-300 font-bold uppercase text-sm text-grey-900 border-b border-grey-light">Amount</th>
+           <th class="py-4 px-6 bg-grey-300 font-bold uppercase text-sm text-grey-900 border-b border-grey-light">Created at</th>
+
+          <td class="py-4 px-6 bg-grey-300 font-bold uppercase text-sm text-grey-900 border-b border-grey-ligth">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order|%>
+          <tr class="hover:bg-grey-lighter" id="<%= order.id%>">
+            <td class="py-4 px-6 border-b border-grey-300 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full"> <%= order.stripe_charge %> </td>
+            <td class="py-4 px-6 border-b border-grey-300"> <%= product_name(order.product_id) %> </td>
+            <td class="py-4 px-6 border-b border-grey-300"> <%= order.total %> </td>
+
+            <td class="py-4 px-6 border-b border-grey-300"> <%= order.created_at.to_formatted_s(:long_ordinal) %></td>
+            <td class="py-4 px-6 border-b border-grey-300">
+            </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+
+  </div>
+  <br />
+ <%= paginate @orders%>
+</div>

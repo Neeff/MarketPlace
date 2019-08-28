@@ -1,0 +1,10 @@
+<span>Name: <%= product.name%> </span><br />
+<span>Stock: <%= product.stock %></span><br />
+<span>Description: <%= product.description %></span><br />
+<span>Price: <%= product.price %></span><br />
+<span>Created at: <%= product.created_at%></span><br />
+<% if product.images.attached?%>
+  <%= image_tag(product.images.first, size: '200x200')%>
+<%else%>
+   <span>Image Not Found</span>
+<%end%>

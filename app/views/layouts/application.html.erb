@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MarketPlace</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://js.stripe.com/v3/"></script>
+    <%= Gon::Base.render_data %>
+  </head>
+
+  <body>
+    <!-- renderiza barra de navegacion!  -->
+    <%= render  "partials/navbar" %>
+    <div class="bg-gray-100">
+      <%= yield %>
+      <%= render  "partials/footer" %>
+    </div>
+
+  </body>
+</html>

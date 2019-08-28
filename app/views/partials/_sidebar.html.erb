@@ -1,0 +1,73 @@
+<div class="flex flex-1">
+  <!--Sidebar-->
+  <aside id="sidebar" class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block ">
+
+      <ul class="list-reset flex flex-col">
+          <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+            <%= link_to  dashboard_path, class: "font-sans font-hairline hover:font-normal text-sm text-nav-item text-purple-500 no-underline"  do %>
+
+                 <i class="fas fa-tachometer-alt"></i>
+                  Dashboard
+                  <span><i class="fas fa-angle-right float-right"></i></span>
+              <% end %>
+          </li>
+          <li class="w-full h-full py-3 px-2 border-b border-light-border">
+              <%= link_to  add_product_path, class: "font-sans font-hairline hover:font-normal text-sm text-nav-item text-purple-500 no-underline"  do %>
+
+              <i class="fas fa-shopping-bag"></i>
+               Add Product
+               <span><i class="fas fa-angle-right float-right"></i></span>
+           <% end %>
+
+          </li>
+          <li class="w-full h-full py-3 px-2 border-b border-light-border">
+              <%= link_to  add_credit_card_path, class: "font-sans font-hairline hover:font-normal text-sm text-nav-item text-purple-500 no-underline"  do %>
+
+                <i class="fas fa-credit-card"></i>
+                Add Credit Card
+                <span><i class="fas fa-angle-right float-right"></i></span>
+           <% end %>
+
+
+         </li>
+         <li class="w-full h-full py-3 px-2 border-b border-light-border">
+              <%= link_to  my_orders_path, class: "font-sans font-hairline hover:font-normal text-sm text-nav-item text-purple-500 no-underline"  do %>
+
+               <i class="fas fa-list-alt"></i>
+                My Orders
+                <span><i class="fas fa-angle-right float-right"></i></span>
+           <% end %>
+
+
+          </li>
+
+
+          <li class="w-full h-full py-3 px-2 border-b border-light-border">
+            <%= link_to my_products_path, class:"font-sans font-hairline hover:font-normal text-sm text-nav-item  text-purple-500 no-underl" do  %>
+              <i class="fas fa-store-alt"></i>
+                My Products
+                <span><i class="fa fa-angle-right float-right"></i></span>
+            <% end %>
+          </li>
+        <% if current_user.can_receive_payments? %>
+
+          <li class="w-full h-full py-3 px-2 border-b border-light-border">
+              <span class="font-sans font-hairline hover:font-normal text-sm text-nav-item text-purple-500 no-underline">
+
+                    Connected With <%= image_tag('stripe.png',size: '50') %>
+              </span>
+          </li>
+          <% else  %>
+          <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                <a href="ui.html"
+                   class="font-sans font-hairline hover:font-normal text-sm text-nav-item text-purple-500 no-underline">
+
+                    <%= link_to image_tag('stripe.png',size: '80'),stripe_url %>
+                </a>
+            </li>
+        <% end %>
+
+      </ul>
+
+  </aside>
+  <!--/Sidebar-->

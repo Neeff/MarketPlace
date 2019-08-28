@@ -1,0 +1,5 @@
+<h3><span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold">Yea! your transaction was successful 👍🎉</span></h3>
+<span>Paid: <%= transaction.paid%></span><br />
+<span>Total: <%= transaction.total%></span><br />
+<span>User: <%= current_user.full_name %> </span><br />
+<span>Transaction id: <%= transaction.stripe_charge%></span>
