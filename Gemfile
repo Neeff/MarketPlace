@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Active Storage variant
 
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 gem 'omniauth-stripe-connect'
 
